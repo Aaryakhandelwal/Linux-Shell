@@ -19,10 +19,6 @@ void disableRawMode();
 void enableRawMode();
 void take_input_with_arrow(char *input_commands);
 
-// redirect.c
-int check_redirect();
-void redirected_execute();
-
 // piping.c
 int check_pipe(int counter);
 void piped_execute(char *input_command);

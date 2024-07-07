@@ -3,17 +3,11 @@
 
 void cd();
 void echo();
-void ls();
 void pinfo();
 void pwd();
-void repeat();
-void replay();
 void shell_commands(int bg);
-void fg();
 void bg();
 void jobs();
-void sig();
-void baywatch();
 
 // history
 void reset_history_buffer();

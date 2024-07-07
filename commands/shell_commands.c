@@ -40,16 +40,9 @@ void shell_commands(int bg_flag)
         else
         { // for foreground processes
             // printf("\nparent pid %d\n", pid);
-
             signal(SIGTTIN, SIG_IGN);
             signal(SIGTTOU, SIG_IGN);
             int status;
-            // if (tcsetpgrp(STDIN_FILENO, pid) < 0)
-            // {
-            //     char *err_buf = (char *)malloc(SMALL_SIZE);
-            //     sprintf(err_buf, "Error in foreground process - %s", command[0]);
-            //     perror(err_buf);
-            // }
             tcsetpgrp(STDIN_FILENO, pid);
 
             waitpid(pid, &status, WUNTRACED);

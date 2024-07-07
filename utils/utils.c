@@ -138,11 +138,7 @@ int is_valid_file(char *file)
 
 void execute()
 {
-    if (check_redirect())
-    {
-        redirected_execute();
-        return;
-    }
+
     if (!strcmp(command[0], "echo"))
     {
         echo();
@@ -155,29 +151,17 @@ void execute()
     {
         cd();
     }
-    else if (!strcmp(command[0], "ls"))
-    {
-        ls();
-    }
     else if (!strcmp(command[0], "quit") || !strcmp(command[0], "exit"))
     {
         custom_exit(EXIT_SUCCESS);
     }
-    else if (!strcmp(command[0], "repeat"))
-    {
-        repeat();
-    }
-    else if (!strcmp(command[0], "pinfo"))
-    {
-        pinfo();
-    }
+    // else if (!strcmp(command[0], "pinfo"))
+    // {
+    //     pinfo();
+    // }
     else if (!strcmp(command[0], "history"))
     {
         print_history();
-    }
-    else if (!strcmp(command[0], "fg"))
-    {
-        fg();
     }
     else if (!strcmp(command[0], "bg"))
     {
@@ -186,18 +170,6 @@ void execute()
     else if (!strcmp(command[0], "jobs"))
     {
         jobs();
-    }
-    else if (!strcmp(command[0], "sig"))
-    {
-        sig();
-    }
-    else if (!strcmp(command[0], "replay"))
-    {
-        replay();
-    }
-    else if (!strcmp(command[0], "baywatch"))
-    {
-        baywatch();
     }
     else
     {
